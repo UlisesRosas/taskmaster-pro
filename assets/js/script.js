@@ -229,3 +229,21 @@ $(".card .list-group").sortable({
     saveTasks();
   }
 });
+
+// making the remove zone in to a droppable
+$("#trash").droppable({
+  accept: ".card .list-group-item",
+  tolerence: "touch",
+  drop: function(event,ui){
+    console.log("drop");
+    ui.draggable.remove();
+  },
+  over: function(event, ui){
+    console.log("over");
+  },
+  out: function(event,ui) {
+    console.log("out");
+  }
+
+  
+});
